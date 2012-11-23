@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- 
+ *  Copyright (c) 2011, Texas Instruments Incorporated
+ *  All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *  *  Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *  *  Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *  *  Neither the name of Texas Instruments Incorporated nor the names of
+ *     its contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ *  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ *  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ *  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ *  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ *  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ *  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+-->
+<html>
+<head>
+    <title>OSAL 1.21.00.07 Release Notes </title>
+    <!-- For now, we use the doxygen style sheet -->
+    <link type="text/css" rel="stylesheet" href="../docs/html/doxygen.css">
+    <!-- doxygen's css .memproto's all have tables for a little extra pad...
+         don't like tables, so give 'em a little extra left pad ourselves
+    --->
+    <style type="text/css">
+    body {
+        margin: 20px;
+    }
+    .memproto {
+        padding-left: 6px;
+    }
+    </style>
+</head>
+<body>
+<table width="100%">
+  <tbody>
+    <tr>
+      <td bgcolor="black" width="1">
+        <a href="http://www.ti.com">
+          <img border=0 src="../docs/html/tilogo.gif" alt="Texas Instruments">
+        </a>
+      </td>
+      <td bgcolor="red">
+        <img src="../docs/html/titagline.gif" alt="Technology for Innovators(tm)">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">OSAL 1.21.00.07 Release Notes </h1>
+<h2 align="center">June 2011</h2>
+
+<p align="center">
+<a href="#Introduction">Introduction</a>,
+<a href="#Documentation">Documentation</a>,
+<a href="#Whats_New">What's New</a>,
+<a href="#Upgrade_Info">Upgrade Info</a>,
+<a href="#Compatibility">Compatibility Information</a>,
+<a href="#Validation">Validation Info</a>,
+<a href="#Known_Issues">Known Issues</a>,
+<!--  no examples yet
+<a href="#Examples">Examples</a>,
+-->
+<a href="#Version">Version Information</a>,
+<a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+
+<h2><a name="Introduction">Introduction</a></h2>
+
+<p>
+This OSAL product contains an Operating System Adaptation Layer interface,
+as well as a concrete implementation for Linux.  This product is
+very new and direct users should plan on some interface churn.  Compatibility
+breaks may appear in the next major release.
+</p>
+
+<p>
+Primary packages in this OSAL release are briefly described here.
+(There are others, see the Configuration Reference
+Guide documentation for a complete package list.)
+</p>
+
+<ul>
+    <li>
+        <b><tt>ti.sdo.utils.loggers</tt></b> - LoggerFlex implementation
+           that includes Task Ids
+    </li>
+    <li>
+        <b><tt>ti.sdo.xdcruntime.linux</tt></b> - Port of XDC Runtime
+           to Linux user mode
+    </li>
+    <li>
+        <b><tt>xdcruntime.cstubs</tt></b> - Port of LoggerFlex C stubs
+           to Linux user mode
+    </li>
+    <li>
+        <b><tt>xdcruntime.heaps</tt></b> - Additional memory heap implementations
+    </li>
+</ul>
+<!-- no examples yet
+<p>
+In addition several example packages are also provided.
+</p>
+-->
+
+<hr>
+
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+The following documentation is available:
+</p>
+<ul>
+  <li>OSAL API Reference Guide</li>
+</ul>
+
+<p>
+Release notes from previous releases are also available in the
+relnotes_archive directory.
+</p>
+
+<hr>
+<h2><a name="Whats_New">What's New</a></h2>
+<p>The following significant changes have been made since 1.00</p>
+
+<div class="memitem">
+<div class="memproto">1.21.00.07 </div>
+
+<div class="memdoc">
+<ul>
+  <li>The following defects were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDOCM00081485</td>
+      <td>Eclipse plugin support broken in OSAL 1.20.00.11
+</td>
+    </tr>
+
+  </tbody>
+</table>
+</li>
+  <br />
+
+  <li>The following enhancements were resolved:
+<table width="100%">
+  <colgroup width="15%">
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Headline</b></td>
+    </tr>
+    <tr>
+      <td>SDOCM00077013</td>
+      <td>LoggerSysTID needs to support time display in delta microseconds
+</td>
+    </tr>
+
+  </tbody>
+</table>
+</li>
+
+</ul>
+</div>
+</div>
+
+
+<div class="memitem">
+<div class="memproto">1.20.00.11 </div>
+<div class="memdoc">
+<ul>
+  <li>New features
+    <ul>
+      <li>Added pre-configured sources for Linux users - config is no
+      longer required(!)</li>
+      <li>Redistributing minimum XDC sources so the XDC product is not
+      required for Linux users that utilize the provided configurations
+      and therefore don't require config tooling.</li>
+    </ul>
+  </li>
+  <br />
+
+  <li>Removed features
+    <ul>
+      <li>Examples aren't provided.  (We want to finalize use cases
+      before demonstrating them!)</li>
+    </ul>
+  </li>
+  <br />
+</ul>
+</div>
+</div>
+
+
+<hr>
+<h2><a name="Upgrade_Info">Upgrade Information</a></h2>
+<p>
+The OSAL packages are available in the "packages/"
+subdirectory.  If you have a previous release of the
+OSAL product, you can install this release next to it, and
+modify your builds to use this newer release.</p>
+
+<!-- No compat breaks with 1.20 in this release
+<h2><font color="red">Compatibility Breaks!</font></h2>
+<ul>
+  <li>CE 1.21.00.07 requires system integrators to update to XDC Tools
+    3.22.01.21 (or newer).
+  </li>
+  <li>CE 1.21.00.07 requires system integrators update to DSP/BIOS
+    6.32.01.38 (or compatible).
+</ul>
+-->
+
+<p>
+Note, if you're upgrading from a release earlier than OSAL 1.20, be
+sure to review the <b>Upgrade</b> section for each of the releases between
+your current OSAL release and this one.  Previous release notes are
+available in the <a href="relnotes_archive">relnotes_archive</a> directory.
+</p>
+
+<hr>
+<h2><a name="Compatibility">Compatibility Information</a></h2>
+<p>
+The details provided below describe each package's compatibility with the
+previous release (1.20.00.11).
+</p>
+<p>
+Some packages have broken compatibility with previous releases.  The details
+provided below describe each package's compatibility with the previous release
+(1.20.00.11).
+</p>
+<p>
+Note, the Configuration Reference Guide contains
+further details about each package.
+</p>
+<table border="1" cellpadding="4">
+  <tbody>
+    <tr>
+      <th>Package</th>
+      <th>osal_1_20_00_11</th>
+      <th>osal_1_21_00_07</th>
+    </tr>
+      <tr>
+          <td><tt><a href="./xdoc/index.html#ti/sdo/tools/build/package.html">ti.sdo.tools.build</a></tt></td>
+          <td align="center">1, 0, 0</td>
+            <td align="center">1, 0, 0</td>
+      </tr>
+      <tr>
+          <td><tt><a href="./xdoc/index.html#ti/sdo/utils/loggers/package.html">ti.sdo.utils.loggers</a></tt></td>
+          <td align="center">1, 0, 0</td>
+            <td align="center">1, 0, 0</td>
+      </tr>
+      <tr>
+          <td><tt><a href="./xdoc/index.html#ti/sdo/xdcruntime/linux/package.html">ti.sdo.xdcruntime.linux</a></tt></td>
+          <td align="center">1, 0, 0</td>
+            <td align="center">1, 0, 0</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<p>The following packages that were in the previous release have been removed
+from this release.
+</p>
+<table border="1" cellpadding="4">
+  <tbody>
+    <tr>
+      <th>Package</th>
+      <th>Compatibility key</th>
+    </tr>
+      <tr>
+          <td><tt>linuxdist</tt></td>
+         <td align="center">1, 0, 0</td>
+      </tr>
+      <tr>
+          <td><tt>xdcruntime.cstubs</tt></td>
+         <td align="center">1, 0, 0</td>
+      </tr>
+      <tr>
+          <td><tt>xdcruntime.heaps</tt></td>
+         <td align="center">1, 0, 0</td>
+      </tr>
+  </tbody>
+</table>
+<br />
+
+
+<p>
+If migrating from a release prior to OSAL 1.20, consult previous
+releases available in the relnotes_archive directory.
+</p>
+
+<h3>Compatibility Key Definitions</h3>
+<p>
+Compatibility keys are intentionally independent of Marketing product
+numbers and are intended to:
+<ol>
+  <li>Enable tooling to identify incompatibilities between components,
+  and</li>
+  <li>Convey a level of compatibility between different releases to
+  set end user expectations.</li>
+</ol>
+</p>
+
+<p>
+Compatibility keys are composed of 3 comma-delimited numbers - M,S,R
+- where:
+<ul>
+  <li><b>M = Major</b>.  A difference in M indicates a break in
+  compatibility.</li>
+  <li><b>S = Source</b>.  A difference in S indicates source
+  compability.  That is, the user's source doesn't require change, but
+  <i>does</i> require rebuilding.</li>
+  <li><b>R = Radix</b>.  A difference in R indicates an introduction
+  of new features, but compatibility with previous interfaces has not
+  broken.  If libraries are provided by the package, an application
+  must re-link with the new libraries, but not rebuild from source.</li>
+</ul>
+</p>
+
+<hr>
+<h2><a name="Validation">Validation</a></h2>
+<p>
+This release was built and validated against using the following software
+components:
+</p>
+
+<ul>
+  <li>XDCtools <b>3.22.01.21</b></li>
+  <li>DSP/BIOS <b>6.32.01.38</b></li>
+  <li>Pre-built binaries were built with the following toolchains:
+    <ul>
+<!-- autogenerated list -->
+      <li>gnu.targets.Linux86 - <b>4.1.0</b></li>
+      <li>gnu.targets.UCArm9 - <b>4.2.1</b></li>
+      <li>gnu.targets.arm.GCArmv5T - <b>4.2.1</b></li>
+      <li>ti.targets.C64P - <b>7.0.0</b></li>
+      <li>ti.targets.C674 - <b>7.0.0</b></li>
+      <li>ti.targets.arm.elf.A8F - <b>4.9.0</b></li>
+      <li>ti.targets.arm.elf.M3 - <b>4.9.0</b></li>
+      <li>ti.targets.elf.C64P - <b>7.2.0</b></li>
+      <li>ti.targets.elf.C64T - <b>7.2.0</b></li>
+      <li>ti.targets.elf.C674 - <b>7.2.0</b></li>
+    </ul>
+  </li>
+</ul>
+
+
+<hr>
+<h2><a name="Known_Issues">Known Issues</a></h2>
+<p>None</p>
+
+<!-- No examples yet
+<hr>
+<h2><a name="Examples">Examples</a></h2>
+<p>OSAL examples and instructions are located in the
+"examples" directory.
+</p>
+<ul>
+  <li><a href="examples/build_instructions.html">Example Build
+  Instructions</a></li>
+</ul>
+-->
+
+<hr>
+<h2><a name="Version">Version Information</a></h2>
+<p>
+This product's version follows a version format, <b>M.mm.pp.bb</b>,
+where <b>M</b> is a single digit Major number, <b>mm</b> is 2 digit
+minor number, <b>pp</b> is a 2 digit patch number, and <b>b</b> is an
+unrestricted set of digits used as an incrementing build counter.
+</p>
+
+<p>
+To support multiple side-by-side installations of the product, the
+product version is encoded in the top level directory,
+ex. <b>osal_1_21_00_07</b>.
+</p>
+
+<p>
+Subsequent releases of patch upgrades will be identified by the patch
+number, ex. OSAL 1.21.01.XX with directory <b>osal_1_21_01_XX</b>.
+Typically, these patches only include critical bug fixes.
+</p>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+<p>For technical support, contact <a href="mailto:softwaresupport@ti.com">softwaresupport@ti.com</a></p>
+
+<p>
+Check the following web site for updates: <a href="http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/osal/index.html">http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/osal/index.html</a>
+</p>
+
+<hr>
+<p>
+Last updated: June 22, 2011
+</p>
+</body>
+</html>
+<!--
+/*
+ * @(#) osal_1_21_00_07; 1, 0, 0,1; 6-22-2011 13:56:19; /db/atree/library/trees/osal/osal.git/src/ osal-d07
+ */
+-->
+

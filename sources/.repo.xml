@@ -1,0 +1,9 @@
+<repository name="sources" producerId="undefined" providerId="osal_1_22_01_09">
+  <pkg name="xdc.runtime" originalProviderId="xdccore"/>
+  <pkg name="xdc.runtime.knl" originalProviderId="xdccore"/>
+  <pkg name="gnu.targets" originalProviderId="xdccore"/>
+  <pkg name="gnu.targets.arm" originalProviderId="xdccore"/>
+  <pkg name="google.targets" originalProviderId="xdccore"/>
+  <pkg name="google.targets.arm" originalProviderId="xdccore"/>
+  <pkg name="qnx.targets.arm" originalProviderId="xdccore"/>
+</repository>
